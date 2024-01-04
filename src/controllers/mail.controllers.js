@@ -7,8 +7,8 @@ export const sendEmail = (req, res) => {
     
     const { name, lastname, email, message } = req.body;
     const result = mailService.sendEmail(name, lastname, email, message);
-    res.status(200).send('Mensaje enviado con éxito.');
+    res.status(200).json({ success: true, message: "Mensaje enviado con éxito" });
   } catch (e) {
-    return res.status(500).send("Ha ocurrido un error");
+    res.status(500).json({ success: false, error: "Ha ocurrido un error" });
   }
 };
