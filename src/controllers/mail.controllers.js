@@ -6,7 +6,7 @@ export const sendEmail = (req, res) => {
   try {
     
     const { name, lastname, email, message } = req.body;
-    console.log(req.body)
+    console.log(req.body.name)
     const result = mailService.sendEmail(name, lastname, email, message);
     res.status(200).send('Mensaje enviado con éxito.');
   } catch (e) {
