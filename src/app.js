@@ -2,6 +2,7 @@ import express from "express";
 import __dirname from "./utils.js";
 import { config } from "dotenv";
 import cors from "cors";
+import bodyParser from "body-parser";
 config();
 
 import mailRouter from "./routes/mail.routes.js";
