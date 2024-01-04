@@ -4,7 +4,8 @@ const mailService = new MailService();
 
 export const sendEmail = (req, res) => {
   try {
-    const { name, lastname, email, message } = JSON.stringify(req.body);
+    const { name, lastname, email, message } = req.body;
+    console.log(name,lastname,email,message)
     const result = mailService.sendEmail(name, lastname, email, message);
     res.status(200).send('Mensaje enviado con éxito.');
   } catch (e) {
